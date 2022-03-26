@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css"> 
+
+
+
+</head>
+<body>
+
+<h2> School Students </h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Class</th>
+    <th style="width:40%;">Percentage</th>
+
+  </tr>
+  <tr>
+    <td>Ram</td>
+    <td>9th</td>
+    <td>85%</td>
+  </tr>
+  <tr>
+    <td>Shyam</td>
+    <td>10th</td>
+    <td>92%</td>
+  </tr>
+  <tr>
+    <td>Sita</td>
+    <td>8th</td>
+    <td>58%</td>
+  </tr>
+  <tr>
+    <td>Gita</td>
+    <td>5th</td>
+    <td>60%</td>
+  </tr>
+  <tr>
+    <td>Suresh</td>
+    <td>8th</td>
+    <td>76%</td>
+  </tr>
+  <tr>
+    <td>Manish</td>
+    <td>9th</td>
+    <td>80%</td>
+  </tr>
+  <tr>
+    <td>Prajakta</td>
+    <td>10th</td>
+    <td>67%</td>
+  </tr>
+  <tr>
+    <td>Seema</td>
+    <td>6th</td>
+    <td>97%</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
